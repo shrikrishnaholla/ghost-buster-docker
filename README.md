@@ -5,8 +5,20 @@ GitHub pages.
 
 ## Edit content with Ghost
 
+If you use `docker-machine`,
 ```bash
-docker-compose up -d ghost
+USERMAP=$(docker-machine ssh `docker-machine active` 'echo "$(id -u):$(id -g)"')
+```
+Else
+```bash
+USERMAP=$(echo "$(id -u):$(id -g)")
+```
+This is to avoid failures when running under `docker-machine`. See [this issue](https://github.com/docker-library/ghost/issues/63#issuecomment-285147730) for details.
+
+Then run
+
+```bash
+USERMAP=$USERMAP docker-compose up -d ghost
 open http://localhost:2368/ghost
 ```
 
