@@ -1,5 +1,5 @@
 #!/bin/bash
-backup=~/Dropbox/ghost/ghost-content-$(date +%Y%m%d).tar.gz
+backup="~/Google\ Drive/blog-backup/ghost-content-$(date +%Y%m%d).tar.gz"
 echo Creating backup $backup
-tar czf $backup content
+tar czf ~/Google\ Drive/blog-backup/ghost-content-$(date +%Y%m%d).tar.gz content
 echo Done.
